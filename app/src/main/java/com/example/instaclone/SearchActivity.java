@@ -1,29 +1,32 @@
 package com.example.instaclone;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 import utils.BottomNavigationViewHelper;
 
+public class SearchActivity extends AppCompatActivity {
+    private static final String TAG = "SearchActivity";
+    private static final int ACTIVITY_NUM = 1;
 
-public class MainActivity extends AppCompatActivity {
-    private static final String TAG="MainActivity";
-    private static final int ACTIVITY_NUM = 0;
-    private Context mContext = MainActivity.this;
+    private Context mContext = SearchActivity.this;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d(TAG, "onCreate: starting");
+        Log.d(TAG, "onCreate: Started");
+
+        setupBottomNavigationView();
     }
+
     /**
      * *Bottom navigation View setup
      */
@@ -38,3 +41,4 @@ public class MainActivity extends AppCompatActivity {
         menuItem.setChecked(true);
     }
 }
+
